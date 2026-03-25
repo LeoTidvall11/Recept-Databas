@@ -27,12 +27,6 @@
   color: black;
 }
 
-#hero-section {
-  width: 100%;
-  padding: 2rem;
-  box-sizing: border-box;
-}
-
 img {
   width: 100%;
   max-height: 600px;
@@ -43,20 +37,63 @@ img {
 .search-icon {
   color: black;
   width: 2rem;
+  position: absolute;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  color: #666;
+  pointer-events: none;
 }
 
-#search-input {
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 20px;
-  background-color: white;
+.hero {
+  background-image: url(../assets/matBild.background.jpg);
+  border-radius: 15px;
+  background-color: #fbffed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  width: 90%;
+  max-width: 600px;
 }
 
 .search-container {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 2px;
-  cursor: pointer;
-  transition: 0.3s ease;
+}
+
+#search-input {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.1rem;
+  outline: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  color: darkgray;
+  pointer-events: none;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
