@@ -1,0 +1,49 @@
+
+
+.hero {
+  background-image: url(../assets/matBild.background.jpg);
+  border-radius: 15px;
+  background-color: #fbffed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  margin-left: 75px;
+  margin-right: 75px; 
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  width: 90%;
+  max-width: 600px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.1rem;
+  outline: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  color: darkgray;
+  pointer-events: none;
+}
