@@ -1,17 +1,15 @@
 
 h2 {
-  font-size: 2.5rem;
-  color: white;
+  font-size: 2rem;
+  color: var(--text-color);
   font-weight: bold;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .card-section-header {
-  background-color: #fbffed;
+  background-color: var(--bg-color);
   width: 100%;
-  margin-top : 0px;
-  margin-bottom: 0px;
-  
+  margin: 75px 0px 0px 0px;
 }
 
 .card-section-header h2 {
@@ -29,7 +27,7 @@ h2 {
 }
 
 .recipe-card {
-  background-color: #FFFFFF;
+  background-color: var(--bg-color);
   backdrop-filter: blur(10px);
   height: 100%;
   overflow:hidden;
@@ -37,6 +35,7 @@ h2 {
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .recipe-card:hover {
@@ -66,7 +65,6 @@ h2 {
 
 .card-header {
   margin: 0 0 1rem 0;
-  color: black;
 }
 
 
