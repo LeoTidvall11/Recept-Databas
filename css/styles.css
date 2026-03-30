@@ -1,3 +1,20 @@
 body{
   margin:0;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
 }
+::selection {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+:root {
+  --primary-color: #4B6F44;   /* Avokadogrön (Knappar/Ikoner) */
+  --secondary-color: #D4A373; /* Trä-ton (Detaljer) */
+  --bg-color: #FDFCF8;        /* Ljus krämvit (Bakgrund) */
+  --text-dark: #2D2926;       /* Mörk espresso (Text/Rubriker) */
+  --accent-red: #E63946; /* Jordgubbsröd (Om något behöver sticka ut extra) */
+  --footer: #4B6F44;
+  --footer-box:#34552e;     
+}
+
+
