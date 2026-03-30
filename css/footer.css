@@ -6,16 +6,32 @@ footer {
   border-radius: 15px;
   justify-content: space-between;
   align-items: stretch;
+  
 }
 
 .contact-us {
   background-color: #e5fc93;
-  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 40px;
   padding: 1rem;
+  width: 15%;
 }
 
 .info {
   background-color: #e5fc93;
-  border-radius: 15px;
+  border: 5px solid #d7f372;
+  border-radius: 40px;
   padding: 1rem;
+  width: 78%;
+  text-align: end;
+}
+
+.info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info ul li {
+  padding-bottom: 0.4rem;
 }
