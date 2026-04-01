@@ -76,4 +76,15 @@ En uppgift är inte klar förrän:
 	2. Code Review är gjord av en annan gruppmedlem.
 	3. Koden är pushad och mergad till main.
 
- 
+______________________________________________________________________________
+
+
+27/3
+
+Desirée
+- Skapade ordning i filstrukturen för CSS och delade upp vår original styles.css till flera olika filer beroende på del av sidan.
+- Började ordna med styling på footer för att efterlikna skissen (ej klar)
+
+Leo
+- Testade lite olika margins och paddings på header området.
+- Gjorde så att headern täcker hela bredden och att navbaren är lite mindre 
