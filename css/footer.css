@@ -3,28 +3,29 @@ footer {
   text-align:left;
   padding: 1rem;
   margin-top: 2rem;
-  border-radius: 15px;
+  border-radius: 35px;
   justify-content: space-between;
   align-items: stretch;
-  
+  background-color: var(--footer);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(255, 255, 255);
 }
 
 .contact-us {
-  background-color: #e5fc93;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  background-color: var(--footer-box);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
   border-radius: 40px;
-  padding: 1rem;
+  padding-left: 2rem;
   width: 15%;
 }
 
 .info {
-  background-color: #e5fc93;
-  border: 5px solid #d7f372;
+  background-color: var(--footer-box);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
   border-radius: 40px;
-  padding: 1rem;
+  padding-left: 2rem;
   width: 78%;
-  text-align: end;
+  text-align: left;
 }
 
 .info ul {
@@ -34,4 +35,16 @@ footer {
 
 .info ul li {
   padding-bottom: 0.4rem;
+}
+
+.info ul li a {
+  text-decoration: none;
+  color: rgb(247, 243, 243);
+}
+
+.info ul li a:hover {
+  color: var(--secondary-color);
+  font-weight: bold;
+  scale: 1.1;
+  transform: ease-in-out;
 }
