@@ -1,16 +1,18 @@
 
 
 .hero {
-  background-image: url(../assets/matBild.background.jpg);
+ background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+    url(../assets/matBild.background.jpg);
   border-radius: 15px;
-  background-color: #fbffed;
+  background-color: var(--bg-color);
   background-repeat: no-repeat;
   background-size: cover;
-  background-blend-mode: multiply;
   padding-top: 12rem;
   padding-bottom: 12rem;
   margin-left: 75px;
   margin-right: 75px; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
 
   display: flex;
   align-items: center;
@@ -21,6 +23,10 @@
 .hero-content {
   width: 90%;
   max-width: 600px;
+}
+
+.hero-content h2{
+  color: var(--bg-color);
 }
 
 .search-container {
@@ -44,6 +50,6 @@
   right: 15px;
   width: 24px;
   height: 24px;
-  color: darkgray;
+  color: var(--primary-color);
   pointer-events: none;
 }
