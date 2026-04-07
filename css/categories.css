@@ -23,7 +23,7 @@
   background-image: url("../assets/huvudrätt-kategori-bild.jpg");
 }
 .hero-efterrätter::before {
-  background-image: url("../assets/efterrätter-hero-bild.jpg");
+  background-image: url("../assets/efterrätt-hero-bild.jpg");
 }
 .hero-förrätter::before {
   background-image: url("../assets/förrätter-hero-bild.jpg");
