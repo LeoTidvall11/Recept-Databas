@@ -1,13 +1,13 @@
 footer {
   display: flex;
-  text-align:left;
+  text-align: left;
   padding: 1rem;
   margin-top: 2rem;
   border-radius: 35px;
   justify-content: space-between;
   align-items: stretch;
   background-color: var(--footer);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   color: rgb(255, 255, 255);
 }
 
@@ -16,6 +16,9 @@ footer {
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
   border-radius: 40px;
   padding-left: 2rem;
+  padding-right: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   width: 15%;
 }
 
@@ -26,6 +29,7 @@ footer {
   padding-left: 2rem;
   width: 78%;
   text-align: left;
+  margin-left: 15px;
 }
 
 .info ul {
