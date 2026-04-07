@@ -2,6 +2,7 @@ body{
   margin:0;
   background-color: var(--bg-color);
   color: var(--text-dark);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 ::selection {
   background-color: var(--primary-color);

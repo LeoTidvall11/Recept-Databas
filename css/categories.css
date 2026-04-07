@@ -1,0 +1,121 @@
+.categories-hero-section {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-left: 75px;
+  margin-right: 75px;
+  min-height: 400px;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+}
+
+.categories-hero-section::before {
+  content: "";
+  flex: 0 0 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-huvudrätter::before {
+  background-image: url("../assets/huvudrätt-kategori-bild.jpg");
+}
+.hero-efterrätter::before {
+  background-image: url("../assets/efterrätter-hero-bild.jpg");
+}
+.hero-förrätter::before {
+  background-image: url("../assets/förrätter-hero-bild.jpg");
+}
+
+.categories-content {
+  flex: 0 0 50%;
+  padding: 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.categories-header {
+  margin-top: 0;
+  font-size: 2.5rem;
+  color: var(--accent-red);
+}
+
+.category-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.categories-badge {
+  display: flex;
+  width: fit-content;
+  border: 2px solid var(--primary-color);
+  padding: 0rem 1rem;
+  margin: 75px 0px 50px 100px;
+  border-radius: 50px;
+}
+
+.categories-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-top: 1rem;
+  margin-right: 200px;
+}
+
+.view-all-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: -30px 50px 50px 0;
+}
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--bg-color);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.card-svg {
+  width: 16px;
+  height: 16px;
+}
+
+.view-all-link:hover {
+  transform: translateY(-2px);
+}
+
+.scroll-section {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 370px;
+  grid-template-columns: none;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  gap: 3rem;
+  padding: 2rem 20px 3rem 20px;
+  scroll-snap-type: x mandatory;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.scroll-section::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-section .recipe-link:nth-child(n + 6) {
+  display: none;
+}
+
+.scroll-section .recipe-link {
+  scroll-snap-align: start;
+}
