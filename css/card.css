@@ -6,15 +6,18 @@ h2 {
 }
 
 .card-section-header {
-  background-color: var(--bg-color);
-  width: 100%;
-  margin-top: 75px;
+  display: flex;
+  width: fit-content;
+  border: 2px solid var(--primary-color);
+  padding: 0rem 1rem;
+  margin: 75px 0px 50px 100px;
+  border-radius: 50px;
 }
 
-.card-section-header h2 {
-  margin-left: 75px;
-  padding: 1rem 2rem;
-  margin-bottom: 0px;
+.card-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
 }
 
 .card-section {
