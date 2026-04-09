@@ -88,3 +88,34 @@ Desirée
 Leo
 - Testade lite olika margins och paddings på header området.
 - Gjorde så att headern täcker hela bredden och att navbaren är lite mindre 
+
+
+______________________________________________________________________________
+
+9/4  SPRINT REVIEW
+	
+	Vårt mål var:
+		Vi vill implementera både flexbox och grid
+		Ha en användarvänlig och tilltalande webbsida
+	
+	Uppnådde vi målet:
+	JA
+	
+	Förklaring:
+	Enkelt att komma tillbaka till startsida, tydligt med vad som är vad, micro interaktioner som gör det tydligt vart man ska trycka.
+	Vi använde både flexbox och grid.
+	
+	
+	Vad blev KLART
+	ALLT blev klart
+	Det blev till och med mera gjort p.g.a att våran sidstorlek på minst 60%  utav skyandtelescope.org inte var tillräckligt därför 
+	fick vi lägga till flera sidor, samt flera kort och även en receptsida för våra favoriter med instruktioner och ingredienser.
+	
+	
+	Teknisk Skuld & Förbättringar
+	Saker som fungerar men behöver göras bättre
+	
+	Förbättring:
+	• Göra allting på sidorna mer responsiva
+	• Ev loggat fler möten eller problem som dök upp
+
