@@ -47,7 +47,7 @@ Recept-Databas/
 | Namn | GitHub |
 |------|--------|
 | Leo | [@LeoTidvall11](https://github.com/LeoTidvall11) |
-| Sali | @SaliSammoArtin(https://github.com/SaliSammoArtin) |
+| Sali | [@SaliSammoArtin](https://github.com/SaliSammoArtin) |
 | Ekaterina |[@Snwrn](https://github.com/Snwrn) |
 | Desirée | [@Triquatra](https://github.com/Triquatra) |
  
