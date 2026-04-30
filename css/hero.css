@@ -1,8 +1,6 @@
-
-
 .hero {
- background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(../assets/matBild.background.jpg);
   border-radius: 15px;
   background-color: var(--bg-color);
@@ -11,8 +9,8 @@
   padding-top: 12rem;
   padding-bottom: 12rem;
   margin-left: 75px;
-  margin-right: 75px; 
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-right: 75px;
+  font-family: Georgia, "Times New Roman", Times, serif;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
 
   display: flex;
@@ -22,11 +20,12 @@
 }
 
 .hero-content {
+  position: relative;
   width: 90%;
   max-width: 600px;
 }
 
-.hero-content h2{
+.hero-content h2 {
   color: var(--bg-color);
 }
 
@@ -53,4 +52,39 @@
   height: 24px;
   color: var(--primary-color);
   pointer-events: none;
+}
+
+.suggestions-box {
+  position: absolute;
+  width: 100%;
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: none;
+  padding: 0;
+  z-index: 10;
+}
+.suggestions-box.active {
+  display: block;
+}
+.suggestion-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.suggestion-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--bg-color);
+  text-align: left;
+}
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background-color: var(--bg-color);
 }
