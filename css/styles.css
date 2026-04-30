@@ -1,3 +1,10 @@
+@import "nav.css";
+@import "footer.css";
+@import "hero.css";
+@import "card.css";
+@import "favorite-recipes.css";
+@import "categories.css";
+
 body{
   margin:0;
   background-color: var(--bg-color);
