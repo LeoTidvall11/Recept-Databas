@@ -36,10 +36,11 @@ Recept-Databas/
 │   └── nav.css
 └── js/                         (skapas under projektets gång)
     ├── api.js                  (alla fetch-anrop mot TheMealDB)
+    ├── ui.js                   (renderCards, showError, showLoading)
     ├── index.js                (logik för startsidan – sökning)
-    ├── huvudratter.js          (hämtar och visar recept för Huvudrätter)
-    ├── forratter.js            (hämtar och visar recept för Förrätter)
-    └── efterratter.js          (hämtar och visar recept för Efterrätter)
+    ├── huvudratter.js          (hämtar och visar recept för Huvudrätter.html)
+    ├── forratter.js            (hämtar och visar recept för Förrätter.html)
+    └── efterratter.js          (hämtar och visar recept för Efterrätter.html)
 ```
  
 ## Grupp
