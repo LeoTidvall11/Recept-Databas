@@ -118,4 +118,16 @@ ______________________________________________________________________________
 	Förbättring:
 	• Göra allting på sidorna mer responsiva
 	• Ev loggat fler möten eller problem som dök upp
+	
+______________________________________________________________________________
 
+2026-04-30 Leo 
+
+- Implementerat en sökfunktion.
+- Den hämtar data från theMealDb 
+- Ger svaret i en suggestions-box direkt under sökbaren.
+- Skapat lite nya filer för att hantera det som search.js och search.html
+- Lite saker kvar att göra som att hantera search.js och fixa lite buggar.
+- Mycket styling kvar.
+- Man blir skickar direkt till search.html om man trycker på enter, Än så länge är det bara placeholder innehåll på search.html
+- Skapade lite funktioner med ej fördefinierade namn men de är relativt tydliga . 
