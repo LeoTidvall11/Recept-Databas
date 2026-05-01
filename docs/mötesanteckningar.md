@@ -131,3 +131,21 @@ ______________________________________________________________________________
 - Mycket styling kvar.
 - Man blir skickar direkt till search.html om man trycker på enter, Än så länge är det bara placeholder innehåll på search.html
 - Skapade lite funktioner med ej fördefinierade namn men de är relativt tydliga . 
+______________________________________________________________________________
+
+2026-04-30
+Desirée
+
+Issue #30 — renderCards och showError i ui.js
+* Skapade ui.js med två funktioner:
+-   renderCards(meals, containerId) — bygger och visar receptkort dynamiskt i DOM:en
+-   showError(message, containerId) — visar felmeddelande för användaren
+
+Issue #41 — Byt namn på filer och mappar till engelska
+* Skapade branch fix/english-filenames och bytte namn på:
+-  förrätter.html → starters.html
+-  huvudrätter.html → main-courses.html
+-  efterrätter.html → desserts.html
+-  Mappen javascript/ → js/
+
+Uppdaterade alla href-referenser i HTML-filerna.
