@@ -18,9 +18,9 @@ Projektet använder [TheMealDB](https://www.themealdb.com/api.php) — en gratis
 ```
 Recept-Databas/
 ├── index.html
-├── förrätter.html
-├── huvudrätter.html
-├── efterrätter.html
+├── starters.html
+├── main-courses.html
+├── desserts.html
 ├── fattigariddare.html
 ├── grillmix.html
 ├── pizza.html
@@ -38,9 +38,9 @@ Recept-Databas/
     ├── api.js                  (alla fetch-anrop mot TheMealDB)
     ├── ui.js                   (renderCards, showError, showLoading)
     ├── index.js                (logik för startsidan – sökning)
-    ├── huvudratter.js          (hämtar och visar recept för Huvudrätter.html)
-    ├── forratter.js            (hämtar och visar recept för Förrätter.html)
-    └── efterratter.js          (hämtar och visar recept för Efterrätter.html)
+    ├── huvudratter.js          (hämtar och visar recept för main-courses.html)
+    ├── forratter.js            (hämtar och visar recept för starters.html)
+    └── efterratter.js          (hämtar och visar recept för desserts.html)
 ```
  
 ## Grupp
