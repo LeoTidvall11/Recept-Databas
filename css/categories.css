@@ -19,13 +19,13 @@
   background-position: center;
 }
 
-.hero-huvudrätter::before {
+.hero-main-courses::before {
   background-image: url("../assets/huvudrätt-kategori-bild.jpg");
 }
-.hero-efterrätter::before {
+.hero-desserts::before {
   background-image: url("../assets/efterrätt-hero-bild.jpg");
 }
-.hero-förrätter::before {
+.hero-starters::before {
   background-image: url("../assets/förrätter-hero-bild.jpg");
 }
 
