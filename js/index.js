@@ -1,6 +1,3 @@
-// Hämta 3 förbestämda recept:
-// 1 dessert, 1 starter, 1 pasta
-
 Promise.all([
     fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")
         .then(response => response.json()),
@@ -14,12 +11,14 @@ Promise.all([
 
 .then(([dessertData, starterData, pastaData]) => {
 
+// 3 förbestämda recept:
+// 1 dessert, 1 starter, 1 pasta
     // Förbestämda recept-ID:n
     const dessertId = "52893";
     const starterId = "52840";
     const pastaId = "52844";
 
-    // Hitta recepten
+    // Hittar recepten
     const dessertMeal = dessertData.meals.find(meal =>
         meal.idMeal === dessertId
     );
@@ -32,7 +31,6 @@ Promise.all([
         meal.idMeal === pastaId
     );
 
-    // Lägg alla i samma array
     const favoriteMeals = [
         dessertMeal,
         starterMeal,
