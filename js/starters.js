@@ -1,8 +1,8 @@
-fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Starter")
-  .then(response => response.json())
-  .then(data => {
-
-    const meals = data.meals;
+// Hämtar förrätter och visar dem på sidan
+async function init() {
+  try {
+    // Funktionen väntar med att hämta en lista med förrätter
+    const meals = await fetchMeals("Starter")
 
     // Våra egna sub-kategorier
     const summerStarterIds = ["52841", "52779", "52840"];
@@ -21,9 +21,7 @@ fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Starter")
     renderCards(summerMeals, "summer-container");
     renderCards(quickMeals, "quick-container");
 
-  })
-  .catch(error => {
-    console.log(error);
+  } catch (error) {
 
     showError(
       "Could not load summer starters.",
@@ -34,4 +32,8 @@ fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Starter")
       "Could not load quick starters.",
       "quick-container"
     );
-  });
+
+  }
+}
+
+init()
