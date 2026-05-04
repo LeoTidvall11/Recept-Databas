@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Sökresultat - Recept-Databas</title>
-    <script src="/javascript/search.js" type="module"></script>
+    <script src="/javascript/search-results.js" type="module"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -36,7 +36,13 @@
       </nav>
     </header>
 
-    <p id="search-query-label">Visar resultat för:</p>
+    <main>
+      <p id="search-query-label" class="search-results">
+        Show result for: <span id="search-term"></span>
+      </p>
+      <p id="results-count" class="search-results"></p>
+      <section class="card-section" id="results-grid"></section>
+    </main>
 
     <footer>
       <div class="contact-us">

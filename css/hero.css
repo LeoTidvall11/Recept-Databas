@@ -88,3 +88,15 @@
 .suggestion-item:hover {
   background-color: var(--bg-color);
 }
+
+.search-results {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  margin-left: 75px;
+}
+
+#search-term {
+  font-weight: bold;
+  color: var(--primary-color);
+}
