@@ -1,7 +1,10 @@
-// Kyckling recept
-fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken")
-    .then(response => response.json())
-    .then(data => {
+// Hämtar olika kategorier för huvudrätter och visar dem på sidan
+async function init() {
+    try {
+        // Funktionen väntar med att hämta en lista med olika måltider
+        const chickenMeals = await fetchMeals("Chicken")
+        const pastaMeals = await fetchMeals("Pasta")
+        const beefMeals = await fetchMeals("Beef")
 
         // Förbestämda chicken recept
         const chickenIds = [
@@ -12,35 +15,14 @@ fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken")
             "52934"
         ];
 
-        const chickenMeals = data.meals.filter(meal =>
-            chickenIds.includes(meal.idMeal)
+        const filteredChicken = chickenMeals.filter(meal => chickenIds.includes(meal.idMeal)
         );
 
         renderCards(
-            chickenMeals,
+            filteredChicken,
             "chicken-container",
             "Tasty chicken recipes."
         );
-
-    })
-    .catch(error => {
-
-        console.log("Chicken API failed:", error);
-
-        showError(
-            "Could not load chicken recipes.",
-            "chicken-container"
-        );
-
-    });
-
-
-
-
-// Pasta recept
-fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta")
-    .then(response => response.json())
-    .then(data => {
 
         // Förbestämda pasta recept
         const pastaIds = [
@@ -51,35 +33,14 @@ fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta")
             "52987"
         ];
 
-        const pastaMeals = data.meals.filter(meal =>
-            pastaIds.includes(meal.idMeal)
+        const filteredPasta = pastaMeals.filter(meal => pastaIds.includes(meal.idMeal)
         );
 
         renderCards(
-            pastaMeals,
+            filteredPasta,
             "pasta-container",
             "Delicious pasta dishes."
         );
-
-    })
-    .catch(error => {
-
-        console.log("Pasta API failed:", error);
-
-        showError(
-            "Could not load pasta recipes.",
-            "pasta-container"
-        );
-
-    });
-
-
-
-
-// Nötkött recept
-fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef")
-    .then(response => response.json())
-    .then(data => {
 
         // Förbestämda beef recept
         const beefIds = [
@@ -90,24 +51,31 @@ fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef")
             "52824"
         ];
 
-        const beefMeals = data.meals.filter(meal =>
-            beefIds.includes(meal.idMeal)
+        const filteredBeef = beefMeals.filter(meal => beefIds.includes(meal.idMeal)
         );
 
         renderCards(
-            beefMeals,
+            filteredBeef,
             "beef-container",
             "Rich and hearty beef meals."
         );
+    } catch (error) {
+        showError(
+            "Could not load chicken recipes.",
+            "chicken-container"
+        );
 
-    })
-    .catch(error => {
-
-        console.log("Beef API failed:", error);
+        showError(
+            "Could not load pasta recipes.",
+            "pasta-container"
+        );
 
         showError(
             "Could not load beef recipes.",
             "beef-container"
         );
 
-    });
+    }
+}
+
+init()
