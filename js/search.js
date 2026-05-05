@@ -1,5 +1,3 @@
-import { searchMeals } from "./api.js";
-
 const suggestionsBox = document.getElementById("suggestions-box");
 const suggestionsList = document.querySelector("#suggestions-box ul");
 const searchInput = document.getElementById("search-input");
@@ -36,3 +34,11 @@ searchInput.addEventListener("keydown", (event) => {
     window.location.href = `search.html?q=${encodeURIComponent(searchInput.value)}`;
   }
 });
+const searchIcon = document.querySelector(".search-icon");
+if (searchIcon) {
+  searchIcon.addEventListener("click", () => {
+    if (searchInput.value.trim()) {
+      window.location.href = `search.html?q=${encodeURIComponent(searchInput.value.trim())}`;
+    }
+  });
+}

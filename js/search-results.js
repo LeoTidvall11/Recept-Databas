@@ -1,9 +1,27 @@
-import { searchMeals } from "./api.js";
-
 const urlParams = new URLSearchParams(window.location.search);
 const searchTerm = urlParams.get("q") ?? "";
 
 document.getElementById("search-term").textContent = searchTerm;
+
+const searchInput = document.getElementById("search-input");
+if (searchInput) {
+  searchInput.value = searchTerm;
+
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && searchInput.value.trim()) {
+      window.location.href = `search.html?q=${encodeURIComponent(searchInput.value.trim())}`;
+    }
+  });
+
+  const searchIcon = document.querySelector(".search-icon");
+  if (searchIcon) {
+    searchIcon.addEventListener("click", () => {
+      if (searchInput.value.trim()) {
+        window.location.href = `search.html?q=${encodeURIComponent(searchInput.value.trim())}`;
+      }
+    });
+  }
+}
 
 const resultsGrid = document.getElementById("results-grid");
 const resultsCount = document.getElementById("results-count");
