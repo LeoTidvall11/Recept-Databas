@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>Sökresultat - Recept-Databas</title>
-    <script src="/js/search-results.js" type="module"></script>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/search-results.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -29,19 +30,43 @@
       </nav>
       <nav>
         <div class="nav-links">
-          <a href="förrätter.html"><h3>Förrätter</h3></a>
-          <a href="huvudrätter.html"><h3>Huvudrätter</h3></a>
-          <a href="efterrätter.html"><h3>Efterrätter</h3></a>
+          <a href="starters.html"><h3>Starters</h3></a>
+          <a href="main-courses.html"><h3>Main Courses</h3></a>
+          <a href="desserts.html"><h3>Desserts</h3></a>
         </div>
       </nav>
     </header>
 
     <main>
-      <p id="search-query-label" class="search-results">
-        Show result for: <span id="search-term"></span>
-      </p>
-      <p id="results-count" class="search-results"></p>
-      <section class="card-section" id="results-grid"></section>
+      <div class="search-section">
+        <div>
+          <p id="search-query-label" class="results-label">
+            Show result for: <span id="search-term"></span>
+          </p>
+          <p id="results-count" class="results-count"></p>
+        </div>
+        <div class="search-bar search-bar--compact">
+          <input
+            type="text"
+            placeholder="Search for recipes, ingredients and much more..."
+            id="search-input" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="search-icon">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+        </div>
+      </div>
+      <div class="results-wrapper">
+        <section class="card-section" id="results-grid"></section>
+      </div>
     </main>
 
     <footer>

@@ -3,7 +3,6 @@ footer {
   text-align: left;
   padding: 1rem;
   margin-top: 2rem;
-  border-radius: 35px;
   justify-content: space-between;
   align-items: stretch;
   background-color: var(--footer);
@@ -20,6 +19,7 @@ footer {
   margin-left: 1rem;
   margin-right: 1rem;
   width: 15%;
+  border: 1px solid var(--bg-color);
 }
 
 .info {
@@ -30,6 +30,7 @@ footer {
   width: 78%;
   text-align: left;
   margin-left: 15px;
+  border: 1px solid var(--bg-color);
 }
 
 .info ul {
