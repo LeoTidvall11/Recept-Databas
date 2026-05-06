@@ -2,7 +2,15 @@ const suggestionsBox = document.getElementById("suggestions-box");
 const suggestionsList = document.querySelector("#suggestions-box ul");
 const searchInput = document.getElementById("search-input");
 
-searchInput.addEventListener("input", async (event) => {
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+}
+
+const handleInput = debounce(async (event) => {
   const query = event.target.value;
   if (query.length <= 2) {
     suggestionsList.innerHTML = "";
@@ -27,7 +35,9 @@ searchInput.addEventListener("input", async (event) => {
   } else {
     suggestionsBox.classList.remove("active");
   }
-});
+}, 300);
+
+searchInput.addEventListener("input", handleInput);
 
 searchInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
