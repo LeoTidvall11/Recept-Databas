@@ -97,19 +97,3 @@
 .suggestion-item:hover {
   background: rgba(255, 255, 255, 0.2);
 }
-
-.results-label {
-  font-size: 1.5rem;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
-  margin-left: 75px;
-}
-
-#search-term {
-  font-weight: bold;
-}
-
-#results-count {
-  font-size: 1rem;
-  color: var(--text-color);
-}
