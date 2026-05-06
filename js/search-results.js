@@ -11,7 +11,8 @@ if (searchTerm || urlParams.get("filter")) {
   const clearLink = document.createElement("a");
   clearLink.href = "search.html";
   clearLink.textContent = "✕ Clear search";
-  clearLink.style.cssText = "margin-left: 1rem; font-size: 0.95rem; color: var(--accent-red); text-decoration: none;";
+  clearLink.style.cssText =
+    "margin-left: 1rem; font-size: 0.95rem; color: var(--accent-red); text-decoration: none;";
   label.appendChild(clearLink);
 }
 
@@ -58,7 +59,7 @@ const CATEGORIES = [
   },
 ];
 
-// Aktiva filter 
+// Aktiva filter
 const activeFilters = new Set();
 const mealCache = {};
 
@@ -80,7 +81,9 @@ function buildFilters() {
 
   CATEGORIES.forEach((cat) => {
     if (cat.apiName) {
-      sidebar.appendChild(createFilterBtn(cat.label, cat.apiName, "filter-btn"));
+      sidebar.appendChild(
+        createFilterBtn(cat.label, cat.apiName, "filter-btn"),
+      );
     } else {
       const group = document.createElement("div");
       group.className = "filter-group";
@@ -93,7 +96,9 @@ function buildFilters() {
       const subWrap = document.createElement("div");
       subWrap.className = "filter-subgroup";
       cat.subcategories.forEach((sub) => {
-        subWrap.appendChild(createFilterBtn(sub.label, sub.apiName, "filter-btn filter-btn--sub"));
+        subWrap.appendChild(
+          createFilterBtn(sub.label, sub.apiName, "filter-btn filter-btn--sub"),
+        );
       });
 
       group.appendChild(subWrap);
@@ -127,7 +132,9 @@ function toggleFilter(apiName, btn) {
 async function getMealsForCategory(apiName) {
   if (mealCache[apiName]) return mealCache[apiName];
   const meals = await fetchMeals(apiName);
-  meals.forEach((m) => { m._category = apiName; });
+  meals.forEach((m) => {
+    m._category = apiName;
+  });
   mealCache[apiName] = meals;
   return meals;
 }
@@ -206,8 +213,9 @@ function renderPage() {
     h3.className = "card-header";
     h3.textContent = meal.strMeal;
     const p = document.createElement("p");
-    p.textContent = meal.strCategory
-      ? `${meal.strCategory} — ${meal.strArea}`
+    p.textContent =
+      meal.strCategory ?
+        `${meal.strCategory} — ${meal.strArea}`
       : `${meal._category} — ${meal.strArea}`;
     p.className = "card-description";
     link.appendChild(img);
@@ -251,15 +259,12 @@ function renderPagination() {
 
   for (let i = 1; i <= totalPages; i++) {
     if (
-      i === 1 ||                          // alltid visa första sida
-      i === totalPages ||                 // alltid visa sista sida
+      i === 1 || // alltid visa första sida
+      i === totalPages || // alltid visa sista sida
       (i >= currentPage - 1 && i <= currentPage + 1) // visa närliggande sidor
     ) {
       addBtn(i);
-    } else if (
-      i === currentPage - 2 ||
-      i === currentPage + 2
-    ) {
+    } else if (i === currentPage - 2 || i === currentPage + 2) {
       addDots();
     }
   }

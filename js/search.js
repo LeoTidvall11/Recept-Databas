@@ -8,7 +8,7 @@ const searchInput = document.getElementById("search-input");
 function debounce(fn, delay) {
   let timer;
   return function (...args) {
-     clearTimeout(timer); // Nollställer timern om användaren skriver igen
+    clearTimeout(timer); // Nollställer timern om användaren skriver igen
     timer = setTimeout(() => fn(...args), delay);
   };
 }
@@ -35,7 +35,7 @@ const handleInput = debounce(async (event) => {
       const suggestionItem = document.createElement("li");
       suggestionItem.textContent = meal.strMeal;
       suggestionItem.classList.add("suggestion-item");
-// När användaren klickar på ett förslag navigeras de till söksidan med det ordet
+      // När användaren klickar på ett förslag navigeras de till söksidan med det ordet
       suggestionItem.addEventListener("click", () => {
         window.location.href = `search.html?q=${encodeURIComponent(meal.strMeal)}`;
       });
