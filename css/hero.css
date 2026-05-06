@@ -1,8 +1,6 @@
-
-
 .hero {
- background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(../assets/matBild.background.jpg);
   border-radius: 15px;
   background-color: var(--bg-color);
@@ -11,8 +9,8 @@
   padding-top: 12rem;
   padding-bottom: 12rem;
   margin-left: 75px;
-  margin-right: 75px; 
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-right: 75px;
+  font-family: Georgia, "Times New Roman", Times, serif;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
 
   display: flex;
@@ -22,11 +20,12 @@
 }
 
 .hero-content {
+  position: relative;
   width: 90%;
   max-width: 600px;
 }
 
-.hero-content h2{
+.hero-content h2 {
   color: var(--bg-color);
 }
 
@@ -36,7 +35,7 @@
   align-items: center;
 }
 
-#search-input {
+.search-container #search-input {
   width: 100%;
   padding: 15px 50px 15px 20px;
   border-radius: 30px;
@@ -46,11 +45,55 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.search-icon {
+.search-container .search-icon {
   position: absolute;
   right: 15px;
   width: 24px;
   height: 24px;
   color: var(--primary-color);
-  pointer-events: none;
+  cursor: pointer;
+}
+
+.suggestions-box {
+  position: absolute;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: none;
+  padding: 0;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.suggestions-box.active {
+  display: block;
+}
+.suggestion-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 0;
+}
+
+.suggestion-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: left;
+  list-style: none;
+  color: #1a1a1a;
+  text-shadow: none;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.2);
 }

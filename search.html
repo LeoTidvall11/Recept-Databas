@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Search-results - Recipe-Database</title>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/search-results.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html">
+          <h1>Recipe-Database</h1>
+        </a>
+        <div class="nav-icon">
+          <a href="https://facebook.com">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://instagram.com">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://github.com">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </nav>
+      <nav>
+        <div class="nav-links">
+          <a href="starters.html"><h3>Starters</h3></a>
+          <a href="main-courses.html"><h3>Main Courses</h3></a>
+          <a href="desserts.html"><h3>Desserts</h3></a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="search-section">
+        <div>
+          <p id="search-query-label" class="results-label">
+            Show result for: <span id="search-term"></span>
+          </p>
+          <p id="results-count" class="results-count"></p>
+        </div>
+        <div class="search-bar search-bar--compact">
+          <input
+            type="text"
+            placeholder="Search for recipes, ingredients and much more..."
+            id="search-input" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="search-icon">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+        </div>
+      </div>
+      <div class="results-wrapper">
+        <section id="results-grid"></section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <p>Developed by Sali, Desiree and Leo</p>
+      </div>
+      <div class="info">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">More Info</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
