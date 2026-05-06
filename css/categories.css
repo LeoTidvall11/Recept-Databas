@@ -38,6 +38,11 @@
   align-items: flex-start;
   text-align: left;
   flex-wrap: wrap;
+  background: rgba(75, 111, 68, 0.1);
+  border: 1px solid rgba(75, 111, 68, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(75, 111, 68, 0.15);
 }
 
 .categories-header {
@@ -58,6 +63,11 @@
   padding: 0rem 1rem;
   margin: 75px 0px 50px 100px;
   border-radius: 50px;
+  background: rgba(75, 111, 68, 0.1);
+  border: 1px solid rgba(75, 111, 68, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(75, 111, 68, 0.15);
 }
 
 .categories-text {
