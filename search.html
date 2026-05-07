@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
+     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   </head>
 
   <body>
@@ -48,7 +49,7 @@
         <div class="search-bar search-bar--compact">
           <input
             type="text"
-            placeholder="Search for recipes, ingredients and much more..."
+            placeholder="Search for recipes or ingredients..."
             id="search-input" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -64,8 +65,17 @@
           </svg>
         </div>
       </div>
-      <div class="results-wrapper">
-        <section id="results-grid"></section>
+
+      <div class="search-layout">
+        <!-- Filter sidebar -->
+        <aside class="filter-sidebar" id="filter-sidebar">
+          <h4 class="filter-title">Filter by category</h4>
+        </aside>
+
+        <!-- Results -->
+        <div class="results-wrapper">
+          <section id="results-grid"></section>
+        </div>
       </div>
     </main>
 
