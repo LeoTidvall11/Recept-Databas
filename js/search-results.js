@@ -273,7 +273,10 @@ function renderPagination() {
 }
 
 if (searchTerm.length > 0) {
-  searchMeals(searchTerm).then(renderCards);
+  showLoading();
+  searchMeals(searchTerm)
+    .then(renderCards)
+    .finally(() => hideLoading());
 } else {
   resultsGrid.innerHTML = `<p class="no-results">Apply a category filter or use the search bar to find recipes.</p>`;
 }
