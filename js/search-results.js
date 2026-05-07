@@ -1,7 +1,8 @@
-//parameter q används för att hämta sökordet från URL:en, t.ex. search.html?q=chicken
+// Hämtar sökordet från URL:en, t.ex. search.html?q=chicken ger searchTerm = "chicken"
 const urlParams = new URLSearchParams(window.location.search);
-const searchTerm = urlParams.get("q") ?? "";
-// Sätter sökordet i rubriken och i sökfältet
+
+const searchTerm = urlParams.get("q") ?? ""; // ?? "" betyder: använd tom sträng om inget ord finns
+// Visar sökordet som en rubrik på sidan
 document.getElementById("search-term").textContent = searchTerm;
 
 // Visar "rensa sökning" länken om det finns ett sökord eller ett aktivt filter
@@ -14,11 +15,11 @@ if (searchTerm || urlParams.get("filter")) {
   label.appendChild(clearLink);
 }
 
-// Hanterar sökfältets funktionalitet
+// Fyller i sökfältet med sökordet så användaren ser vad de sökte på
 const searchInput = document.getElementById("search-input");
 if (searchInput) {
   searchInput.value = searchTerm;
-  //event listener för att hantera sökningar när användaren trycker på Enter eller klickar på sökikonen
+  // Lyssnar på Enter och sökikonen så användaren kan söka igen
   searchInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter" && searchInput.value.trim()) {
       window.location.href = `search.html?q=${encodeURIComponent(searchInput.value.trim())}`;
@@ -161,10 +162,10 @@ async function applyAndRender() {
   renderCards(allMeals);
 }
 
-// Funktion för att rendera sökresultaten på sidan
+// Hämtar elementen där resultat och antal träffar ska visas
 const resultsGrid = document.getElementById("results-grid");
 const resultsCount = document.getElementById("results-count");
-// Tar emot en array av måltider och skapar kort för varje måltid med pagination
+// Skapar och visar receptkort för varje måltid
 function renderCards(meals) {
   currentMeals = meals;
   currentPage = 1;
@@ -172,8 +173,9 @@ function renderCards(meals) {
 }
 
 function renderPage() {
-  resultsGrid.innerHTML = "";
+  resultsGrid.innerHTML = ""; // Tömmer gamla resultat innan nya visas
 
+  // Om inga recept hittades visas ett meddelande
   if (currentMeals.length === 0) {
     const noResults = document.createElement("p");
     noResults.className = "no-results";
@@ -189,12 +191,13 @@ function renderPage() {
 
   resultsCount.textContent = `${currentMeals.length} recipes found`;
 
+  // Loopar igenom varje recept och skapar ett klickbart kort med bild och info
   pageMeals.forEach((meal) => {
     const link = document.createElement("a");
     link.href = `https://www.themealdb.com/meal/${meal.idMeal}`;
     link.classList.add("recipe-link");
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
+    link.target = "_blank"; // Öppnar receptet i en ny flik
+    link.rel = "noopener noreferrer"; // Säkerhetsattribut för externa länkar
     const img = document.createElement("img");
     img.src = meal.strMealThumb;
     img.alt = meal.strMeal;
