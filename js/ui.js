@@ -12,13 +12,21 @@ function renderCards(meals, containerId) {
   meals.forEach((meal) => {
     const card = document.createElement("div");
     card.className = "recipe-card";
-    card.innerHTML = `
-        <img src="${meal.strMealThumb}" 
-        alt="${meal.strMeal}" class="card-img">
-        <div class="card-content">
-        <h3>${meal.strMeal}</h3>
-        </div>
-        `;
+
+    const img = document.createElement("img");
+    img.src = meal.strMealThumb;
+    img.alt = meal.strMeal;
+    img.className = "card-img";
+
+    const content = document.createElement("div");
+    content.className = "card-content";
+
+    const h3 = document.createElement("h3");
+    h3.textContent = meal.strMeal;
+
+    content.appendChild(h3);
+    card.appendChild(img);
+    card.appendChild(content);
     container.appendChild(card);
   });
 }
@@ -27,12 +35,27 @@ function showError(message, containerId) {
   const container = document.getElementById(containerId);
   container.innerHTML = `<p class="error-message">${message}</p>`;
 }
-// Laddningsikon - visar när data hämtas och döljer när det är klart
-const loadingIcon = document.getElementById("loading-icon");
-
-function showLoading() {
-  loadingIcon.style.display = "block";
+// Laddningsikon - skapas dynamiskt så att den fungerar på alla sidor
+function getLoadingIcon(containerId) {
+  let icon = document.getElementById("loading-icon");
+  if (!icon) {
+    icon = document.createElement("div");
+    icon.id = "loading-icon";
+    icon.className = "loading-icon";
+    const parent = containerId ? document.getElementById(containerId) : document.body;
+    if (parent) {
+      parent.style.position = "relative";
+      parent.appendChild(icon);
+    } else {
+      document.body.appendChild(icon);
+    }
+  }
+  return icon;
 }
-function hideLoading() {
-  loadingIcon.style.display = "none";
+
+function showLoading(containerId) {
+  getLoadingIcon(containerId).style.display = "block";
+}
+function hideLoading(containerId) {
+  getLoadingIcon(containerId).style.display = "none";
 }

@@ -155,7 +155,8 @@ function wantedApiNames() {
 
 //Om filter ändras, dynamisk uppdaterar resultat
 async function applyAndRender() {
-  resultsGrid.innerHTML = `<p class="loading-msg">Loading recipes…</p>`;
+  showLoading("results-wrapper");
+  resultsGrid.innerHTML = "";
   resultsCount.textContent = "";
 
   const wanted = wantedApiNames();
@@ -167,6 +168,7 @@ async function applyAndRender() {
   }
 
   renderCards(allMeals);
+  hideLoading("results-wrapper");
 }
 
 // Hämtar elementen där resultat och antal träffar ska visas
@@ -179,15 +181,20 @@ function renderCards(meals) {
   renderPage();
 }
 
+// Visar ett meddelande när inga resultat hittades
+function showNoResults(message) {
+  const noResults = document.createElement("p");
+  noResults.className = "no-results";
+  noResults.textContent = message;
+  resultsGrid.appendChild(noResults);
+}
+
 function renderPage() {
   resultsGrid.innerHTML = ""; // Tömmer gamla resultat innan nya visas
 
   // Om inga recept hittades visas ett meddelande
   if (currentMeals.length === 0) {
-    const noResults = document.createElement("p");
-    noResults.className = "no-results";
-    noResults.textContent = `No recipes found for "${searchTerm}".`;
-    resultsGrid.appendChild(noResults);
+    showNoResults(`No recipes found for "${searchTerm}".`);
     resultsCount.textContent = "";
     renderPagination();
     return;
@@ -272,13 +279,16 @@ function renderPagination() {
   resultsGrid.after(nav);
 }
 
+// Om det finns ett sökord i URL:en, gör en sökning och visa resultaten
 if (searchTerm.length > 0) {
-  showLoading();
+  showLoading("results-wrapper");
   searchMeals(searchTerm)
     .then(renderCards)
-    .finally(() => hideLoading());
+    .finally(() => hideLoading("results-wrapper"));
 } else {
-  resultsGrid.innerHTML = `<p class="no-results">Apply a category filter or use the search bar to find recipes.</p>`;
+  showNoResults(
+    "Apply a category filter or use the search bar to find recipes.",
+  );
 }
 
 // Bygga filter vid start

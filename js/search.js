@@ -24,11 +24,9 @@ const handleInput = debounce(async (event) => {
     return;
   }
 
-  showLoading(); // Visar laddningsikonen medan vi hämtar data
   // Anropar API:et och väntar på svaret (await pausar koden tills svaret kommit)
   try {
     const meals = await searchMeals(query);
-    hideLoading(); // Döljer laddningsikonen när vi fått svaret
     suggestionsList.innerHTML = ""; // Tömmer gamla förslag
 
     if (meals.length > 0) {
@@ -48,7 +46,6 @@ const handleInput = debounce(async (event) => {
       suggestionsBox.classList.remove("active"); // Döljer rutan om inga träffar hittades
     }
   } catch (error) {
-    hideLoading(); // Döljer laddningsikonen även om det blev ett fel
     console.error("Error fetching search suggestions:", error);
   }
 }, 300);
