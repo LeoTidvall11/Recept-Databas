@@ -19,7 +19,7 @@ function renderCards(meals, containerId) {
         alt="${meal.strMeal}" class="card-img">
         <div class="card-content">
         <h3>${meal.strMeal}</h3>
-        <p>${meal.strCategory}</p>
+        <p>${meal.strCountry}</p>
         </div>
         </a>
         `;

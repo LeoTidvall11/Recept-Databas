@@ -13,6 +13,8 @@ document.getElementById("meal-name").innerHTML = `<h1>${meal.strMeal}</h1>`
 document.getElementById("meal-image").innerHTML = `<img src="${meal.strMealThumb}" alt="${meal.strMeal}">`
 // Hämtar kategori
 document.getElementById("meal-category").innerHTML = `<h1>${meal.strCategory}</h1>`
+// Hämtar land
+document.getElementById("meal-area").innerHTML = `<p>${meal.strArea}</p>`
 // Hämtar instruktioner
 document.getElementById("meal-instructions").innerHTML = `<p>${meal.strInstructions}</p>`
 // Hämtar ingridienser
