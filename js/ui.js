@@ -14,11 +14,14 @@ function renderCards(meals, containerId) {
         const card = document.createElement("div");
         card.className = "recipe-card";
         card.innerHTML = `
+        <a href="recipe.html?id=${meal.idMeal}" class="recipe-link">
         <img src="${meal.strMealThumb}" 
         alt="${meal.strMeal}" class="card-img">
         <div class="card-content">
         <h3>${meal.strMeal}</h3>
+        <p>${meal.strCountry}</p>
         </div>
+        </a>
         `;
         container.appendChild(card);
     });
