@@ -38,9 +38,11 @@ Recept-Databas/
     ├── api.js                  (alla fetch-anrop mot TheMealDB)
     ├── ui.js                   (renderCards, showError, showLoading)
     ├── index.js                (logik för startsidan – sökning)
-    ├── huvudratter.js          (hämtar och visar recept för main-courses.html)
-    ├── forratter.js            (hämtar och visar recept för starters.html)
-    └── efterratter.js          (hämtar och visar recept för desserts.html)
+    ├── main-courses.js         (hämtar och visar recept för main-courses.html)
+    ├── starters.js             (hämtar och visar recept för starters.html)
+    ├── desserts.js             (hämtar och visar recept för desserts.html)
+    ├── search.js               (hanterar sökfäkltet, visar förslag)
+    └── search-results.js       (hämtar o visar sökresultat)  
 ```
  
 ## Grupp

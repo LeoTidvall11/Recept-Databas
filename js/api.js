@@ -19,3 +19,13 @@ async function searchMeals(query) {
   // Om inga måltider hittades returneras en tom array istället för null
   return data.meals ?? [];
 }
+
+// Hämtar måltider med id
+async function getMealById(id) {
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    // Omvandlar datan till JSON
+    const data = await response.json();
+    // Returnerar första objektet i listan, om det misslyckas, returnerar null
+    return data.meals[0] ?? null;
+}
+
