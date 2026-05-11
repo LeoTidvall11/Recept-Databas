@@ -208,10 +208,8 @@ function renderPage() {
   // Loopar igenom varje recept och skapar ett klickbart kort med bild och info
   pageMeals.forEach((meal) => {
     const link = document.createElement("a");
-    link.href = `https://www.themealdb.com/meal/${meal.idMeal}`;
+    link.href = `recipe.html?id=${meal.idMeal}`;
     link.classList.add("recipe-link");
-    link.target = "_blank"; // Öppnar receptet i en ny flik
-    link.rel = "noopener noreferrer"; // Säkerhetsattribut för externa länkar
     const img = document.createElement("img");
     img.src = meal.strMealThumb;
     img.alt = meal.strMeal;
