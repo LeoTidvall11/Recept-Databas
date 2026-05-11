@@ -6,8 +6,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-     </head>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+  </head>
 
   <body>
     <header>
@@ -37,17 +37,36 @@
     </header>
 
     <main>
-      <div id="meal-name"></div>
-
-      <div id="meal-image"></div>
-
-      <div id="meal-category"></div>
-      
-      <div id="meal-area"></div>
-
-      <div id="meal-instructions"></div>
-      
-      <div id="meal-ingredients"></div>
+      <div class="recipe-hero">
+        <img id="meal-image" src="" alt="" />
+        <div class="hero-text">
+          <h2 id="meal-name"></h2>
+          <div class="recipe-icons">
+            <span id="meal-area"
+              ><i class="fa-regular fa-earth-americas"></i
+            ></span>
+            <span id="meal-category"><i class="fa-regular fa-tag"></i></span>
+            <span
+              class="save-btn"
+              onclick="
+                this.querySelector('i').classList.toggle('fa-solid');
+                this.querySelector('i').classList.toggle('fa-regular');
+              "
+              ><i class="fa-regular fa-heart"></i>Save Recipe</span
+            >
+          </div>
+        </div>
+      </div>
+      <section class="recipe-info">
+        <div class="recipe-ingredients">
+          <h3>Ingredients</h3>
+          <ul id="meal-ingredients"></ul>
+        </div>
+        <div class="recipe-instructions">
+          <h3>Instructions</h3>
+          <ol id="meal-instructions"></ol>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -66,8 +85,8 @@
         </ul>
       </div>
     </footer>
-<script src="js/api.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/recipe.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/recipe.js"></script>
   </body>
 </html>
