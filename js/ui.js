@@ -13,6 +13,10 @@ function renderCards(meals, containerId) {
     const card = document.createElement("div");
     card.className = "recipe-card";
 
+    const link = document.createElement("a");
+    link.href = `recipe.html?id=${meal.idMeal}`;
+    link.className = "recipe-link";
+
     const img = document.createElement("img");
     img.src = meal.strMealThumb;
     img.alt = meal.strMeal;
@@ -24,9 +28,15 @@ function renderCards(meals, containerId) {
     const h3 = document.createElement("h3");
     h3.textContent = meal.strMeal;
 
+    const p = document.createElement("p");
+    p.textContent = meal.strCountry;
+    p.className = "card-description";
+
     content.appendChild(h3);
-    card.appendChild(img);
-    card.appendChild(content);
+    content.appendChild(p);
+    link.appendChild(img);
+    link.appendChild(content);
+    card.appendChild(link);
     container.appendChild(card);
   });
 }
@@ -42,7 +52,8 @@ function getLoadingIcon(containerId) {
     icon = document.createElement("div");
     icon.id = "loading-icon";
     icon.className = "loading-icon";
-    const parent = containerId ? document.getElementById(containerId) : document.body;
+    const parent =
+      containerId ? document.getElementById(containerId) : document.body;
     if (parent) {
       parent.style.position = "relative";
       parent.appendChild(icon);
