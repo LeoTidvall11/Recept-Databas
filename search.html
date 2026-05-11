@@ -3,12 +3,13 @@
   <head>
     <title>Search-results - Recipe-Database</title>
     <script src="/js/api.js" defer></script>
+    <script src="/js/ui.js" defer></script>
     <script src="/js/search-results.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
   </head>
 
   <body>
@@ -73,7 +74,7 @@
         </aside>
 
         <!-- Results -->
-        <div class="results-wrapper">
+        <div class="results-wrapper" id="results-wrapper">
           <section id="results-grid"></section>
         </div>
       </div>

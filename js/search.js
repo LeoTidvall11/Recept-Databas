@@ -8,7 +8,7 @@ const searchInput = document.getElementById("search-input");
 function debounce(fn, delay) {
   let timer;
   return function (...args) {
-     clearTimeout(timer); // Nollställer timern om användaren skriver igen
+    clearTimeout(timer); // Nollställer timern om användaren skriver igen
     timer = setTimeout(() => fn(...args), delay);
   };
 }
@@ -25,24 +25,28 @@ const handleInput = debounce(async (event) => {
   }
 
   // Anropar API:et och väntar på svaret (await pausar koden tills svaret kommit)
-  const meals = await searchMeals(query);
-  suggestionsList.innerHTML = ""; // Tömmer gamla förslag
+  try {
+    const meals = await searchMeals(query);
+    suggestionsList.innerHTML = ""; // Tömmer gamla förslag
 
-  if (meals.length > 0) {
-    suggestionsBox.classList.add("active");
-    // Visar max 7 förslag som klickbara listobjekt
-    meals.slice(0, 7).forEach((meal) => {
-      const suggestionItem = document.createElement("li");
-      suggestionItem.textContent = meal.strMeal;
-      suggestionItem.classList.add("suggestion-item");
-// När användaren klickar på ett förslag navigeras de till söksidan med det ordet
-      suggestionItem.addEventListener("click", () => {
-        window.location.href = `search.html?q=${encodeURIComponent(meal.strMeal)}`;
+    if (meals.length > 0) {
+      suggestionsBox.classList.add("active");
+      // Visar max 7 förslag som klickbara listobjekt
+      meals.slice(0, 7).forEach((meal) => {
+        const suggestionItem = document.createElement("li");
+        suggestionItem.textContent = meal.strMeal;
+        suggestionItem.classList.add("suggestion-item");
+        // När användaren klickar på ett förslag navigeras de till söksidan med det ordet
+        suggestionItem.addEventListener("click", () => {
+          window.location.href = `search.html?q=${encodeURIComponent(meal.strMeal)}`;
+        });
+        suggestionsList.appendChild(suggestionItem);
       });
-      suggestionsList.appendChild(suggestionItem);
-    });
-  } else {
-    suggestionsBox.classList.remove("active"); // Döljer rutan om inga träffar hittades
+    } else {
+      suggestionsBox.classList.remove("active"); // Döljer rutan om inga träffar hittades
+    }
+  } catch (error) {
+    console.error("Error fetching search suggestions:", error);
   }
 }, 300);
 

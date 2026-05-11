@@ -102,7 +102,10 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background 0.18s, color 0.18s, transform 0.15s;
+  transition:
+    background 0.18s,
+    color 0.18s,
+    transform 0.15s;
 }
 
 .filter-btn:hover {
@@ -168,7 +171,9 @@
   overflow: hidden;
   background: var(--bg-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
   text-decoration: none;
   color: inherit;
 }
@@ -229,7 +234,9 @@
   color: var(--text-dark);
   font-family: Georgia, "Times New Roman", Times, serif;
   cursor: pointer;
-  transition: background 0.18s, color 0.18s;
+  transition:
+    background 0.18s,
+    color 0.18s;
 }
 
 .page-btn:hover {
@@ -249,4 +256,9 @@
   color: var(--text-dark);
   opacity: 0.5;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.no-results {
+  font-style: italic;
+  color: var(--text-dark);
 }
