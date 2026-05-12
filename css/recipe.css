@@ -1,0 +1,156 @@
+.recipe-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin: 3rem 80px;
+  background-color: rgb(128, 181, 117);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(75, 111, 68, 0.5);
+}
+
+.recipe-hero img {
+  width: 40%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px 0 0 15px;
+}
+
+.recipe-hero h2 {
+  margin-bottom: 16px;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.recipe-info {
+  display: grid;
+  grid-template-columns: 1fr 70%;
+  margin: 0 80px 3rem;
+  gap: 24px;
+  align-items: start;
+}
+
+.recipe-ingredients {
+  background-color: #f3f7f2;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 20px 28px 24px;
+  color: var(--text-dark);
+  box-shadow: 0 0 10px rgba(75, 111, 68, 0.5);
+}
+
+.recipe-ingredients h3,
+.recipe-instructions h3 {
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: var(--primary-color);
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.recipe-ingredients ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recipe-ingredients li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.recipe-ingredients li::before {
+  content: "-";
+  color: var(--primary-color);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.recipe-instructions {
+  background-color: #f3f7f2;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 24px 36px;
+  color: var(--text-dark);
+  box-shadow: 0 0 10px rgba(75, 111, 68, 0.5);
+}
+
+.recipe-instructions ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step-counter;
+}
+
+.recipe-instructions li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  counter-increment: step-counter;
+}
+
+.recipe-instructions li::before {
+  content: counter(step-counter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  background-color: var(--primary-color);
+  color: #fdfcf8;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.recipe-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.recipe-icons span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+.recipe-icons .save-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid var(--text-dark);
+  border-radius: 20px;
+  padding: 4px 12px;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+  user-select: none;
+}
+
+.recipe-icons .save-btn:hover {
+  background-color: var(--text-dark);
+  color: #fdfcf8;
+}
+
+.recipe-icons .save-btn .fa-solid.fa-heart {
+  color: red;
+}
