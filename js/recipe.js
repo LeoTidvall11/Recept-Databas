@@ -1,5 +1,5 @@
 // Hämtar och visar ett recept baserat på id från URL:en
-async function init() {
+async function renderRecipe() {
   showLoading("meal-name");
   try {
     // Hämtar id från URL:en
@@ -60,4 +60,4 @@ async function init() {
   }
 }
 
-init();
+renderRecipe();
