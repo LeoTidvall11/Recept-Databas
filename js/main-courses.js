@@ -1,5 +1,5 @@
 // Hämtar olika kategorier för huvudrätter och visar dem på sidan
-async function init() {
+async function filterMainCourses() {
   try {
     showLoading(); // Visar laddningsikonen medan vi hämtar data
     // Funktionen väntar med att hämta en lista med olika måltider
@@ -43,5 +43,5 @@ async function init() {
     hideLoading(); // Döljer laddningsikonen när allt är klart
   }
 }
-
-init();
+  
+filterMainCourses();

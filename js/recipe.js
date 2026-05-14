@@ -8,27 +8,33 @@ async function renderRecipe() {
     // Hämtar receptet från API:et med id:t
     const meal = await getMealById(id);
 
+    // Hämtar namn
     const mealNameElement = document.getElementById("meal-name");
     mealNameElement.textContent = meal.strMeal;
+
+    //Hämtar bild
     const mealImageElement = document.getElementById("meal-image");
     mealImageElement.src = meal.strMealThumb;
 
+    //Hämtar land
     const mealAreaElement = document.getElementById("meal-area");
     const areaIcon = document.createElement("i");
     areaIcon.className = "fa-solid fa-earth-americas";
     mealAreaElement.replaceChildren(areaIcon, ` ${meal.strArea}`);
 
+    //Hämtar categori
     const mealCategoryElement = document.getElementById("meal-category");
     const categoryIcon = document.createElement("i");
     categoryIcon.className = "fa-solid fa-tag";
     mealCategoryElement.replaceChildren(categoryIcon, ` ${meal.strCategory}`);
 
+    //Hämtar instruktioner
     const mealInstructionsElement =
       document.getElementById("meal-instructions");
     mealInstructionsElement.innerHTML = "";
 
     const steps = meal.strInstructions.split("\r\n");
-
+    
     steps.forEach((step) => {
       if (step.trim().length > 0) {
         const li = document.createElement("li");
@@ -37,6 +43,7 @@ async function renderRecipe() {
       }
     });
 
+    //Hämtar ingredienser
     const mealIngredientsList = document.getElementById("meal-ingredients");
     mealIngredientsList.innerHTML = "";
 

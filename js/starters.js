@@ -1,5 +1,5 @@
 // Hämtar förrätter och visar dem på sidan
-async function init() {
+async function filterStarters() {
   try {
     showLoading("summer-container"); // Visar laddningsikonen medan vi hämtar data
     // Funktionen väntar med att hämta en lista med förrätter
@@ -29,4 +29,4 @@ async function init() {
     hideLoading("summer-container"); // Döljer laddningsikonen när allt är klart
   }
 }
-init();
+filterStarters();
