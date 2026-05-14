@@ -21,28 +21,30 @@ Recept-Databas/
 ├── starters.html
 ├── main-courses.html
 ├── desserts.html
-├── fattigariddare.html
-├── grillmix.html
-├── pizza.html
+├── recipe.html
+├── search.html
 ├── assets/
 │   └── (bilder)
 ├── css/
-│   ├── styles.css
 │   ├── card.css
 │   ├── categories.css
-│   ├── favorite-recipes.css
 │   ├── footer.css
 │   ├── hero.css
-│   └── nav.css
-└── js/                         (skapas under projektets gång)
+│   ├── nav.css
+    ├── recipe.css
+    ├── search.css
+│   ├── styles.css
+│   └── utility.css
+└── js/                         
     ├── api.js                  (alla fetch-anrop mot TheMealDB)
-    ├── ui.js                   (renderCards, showError, showLoading)
+    ├── desserts.js             (hämtar och visar recept för desserts.html)
     ├── index.js                (logik för startsidan – sökning)
     ├── main-courses.js         (hämtar och visar recept för main-courses.html)
+    ├── recipe.js               (hämtar och visar recept baserat på id)
+    ├── search-results.js       (hämtar och visar sökresultat)
+    ├── search.js               (hanterar sökfältet, visar förslag)
     ├── starters.js             (hämtar och visar recept för starters.html)
-    ├── desserts.js             (hämtar och visar recept för desserts.html)
-    ├── search.js               (hanterar sökfäkltet, visar förslag)
-    └── search-results.js       (hämtar o visar sökresultat)  
+    └── ui.js                   (renderCards, showError, showLoading)
 ```
  
 ## Grupp
