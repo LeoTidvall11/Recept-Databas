@@ -41,10 +41,12 @@ function renderCards(meals, containerId) {
   });
 }
 
+//visa error meddelandet till användare om något går fel
 function showError(message, containerId) {
   const container = document.getElementById(containerId);
   container.innerHTML = `<p class="error-message">${message}</p>`;
 }
+
 // Laddningsikon - skapas dynamiskt så att den fungerar på alla sidor
 function getLoadingIcon(containerId) {
   let icon = document.getElementById("loading-icon");
@@ -63,7 +65,7 @@ function getLoadingIcon(containerId) {
   }
   return icon;
 }
-
+// Visar eller döljer laddningsikonen
 function showLoading(containerId) {
   getLoadingIcon(containerId).style.display = "block";
 }

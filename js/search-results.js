@@ -76,23 +76,28 @@ if (presetFilter) {
 
 // bygga filter sidebar dynamiskt
 function buildFilters() {
+  //hitta sidebar, om ingen finns, avbryta
   const sidebar = document.getElementById("filter-sidebar");
   if (!sidebar) return;
 
+  //skapa en knapp i side bar för varje kategori
   CATEGORIES.forEach((cat) => {
     if (cat.apiName) {
       sidebar.appendChild(
         createFilterBtn(cat.label, cat.apiName, "filter-btn"),
       );
     } else {
+      //om namnet har inte egen api(main-course), skapa en grupp istället
       const group = document.createElement("div");
       group.className = "filter-group";
 
+      //titel för gruppen
       const title = document.createElement("span");
       title.className = "filter-group-title";
       title.textContent = cat.label;
       group.appendChild(title);
 
+      //Tillsätter sub-kategorier i gruppen
       const subWrap = document.createElement("div");
       subWrap.className = "filter-subgroup";
       cat.subcategories.forEach((sub) => {
@@ -107,6 +112,7 @@ function buildFilters() {
   });
 }
 
+//skapa knapparna för kategorier som har api
 function createFilterBtn(label, apiName, className) {
   const btn = document.createElement("button");
   btn.className = className;
@@ -117,6 +123,7 @@ function createFilterBtn(label, apiName, className) {
   return btn;
 }
 
+//markerar vilket filter som är aktivt
 function toggleFilter(apiName, btn) {
   if (activeFilters.has(apiName)) {
     activeFilters.delete(apiName);
@@ -139,6 +146,7 @@ async function getMealsForCategory(apiName) {
   return meals;
 }
 
+//hämtar kategori namn från databasen, om kategorin är i gruppen, skapar sub-kategri
 function allLeafApiNames() {
   const names = [];
   CATEGORIES.forEach((cat) => {
@@ -148,6 +156,9 @@ function allLeafApiNames() {
   return names;
 }
 
+// Returnerar vilka kategorier som ska användas.
+// Om inga filter är aktiva returneras alla kategorier.
+// Annars returneras endast de filter användaren valt.
 function wantedApiNames() {
   if (activeFilters.size === 0) return allLeafApiNames();
   return [...activeFilters];
@@ -234,28 +245,47 @@ function renderPage() {
 
 // rendera pagination
 function renderPagination() {
+   // Kontrollera om det redan finns en pagination och ta bort den för att undvika dubletter
   const existing = document.getElementById("pagination");
   if (existing) existing.remove();
 
+  // Räkna ut hur många sidor som behövs totalt genom att dela antal måltider med antal per sida
   const totalPages = Math.ceil(currentMeals.length / PAGE_SIZE);
+
+  // Om det bara finns en sida behövs ingen pagination, return
   if (totalPages <= 1) return;
 
+  //Div för alla pagination-knappar
   const nav = document.createElement("div");
   nav.id = "pagination";
 
+  //funktion som skapar en pagination-knapp för en sida
   function addBtn(i) {
+    //skapa knappen
     const btn = document.createElement("button");
+    //nummer inne i knappen
     btn.textContent = i;
+
+    //lägg till css klasser, om sidan är "aktiv", lägg till active klass
     btn.className = "page-btn" + (i === currentPage ? " active" : "");
+
+    //när user klickar på knappen
     btn.addEventListener("click", () => {
+      //uppdatera vilken sida som har klass active
       currentPage = i;
+      //uppdatera innehållet på sidan
       renderPage();
+      //scrolla snyggt till början av sida
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+    //lägger till knappen i container
     nav.appendChild(btn);
   }
 
+  //Funktionen som behövs för att hantera problemet när det är för många sidor.
+  //Lägger till ... mellan sidonummer
   function addDots() {
+    //skapa en element för dots(...)
     const dots = document.createElement("span");
     dots.textContent = "…";
     dots.className = "page-dots";

@@ -1,5 +1,5 @@
 // Hämtar efterrätter och visar dem på sidan
-async function init() {
+async function filterDesserts() {
   try {
     showLoading(); // Visar laddningsikonen medan vi hämtar data
     // Funktionen väntar med att hämta en lista med efterrätter
@@ -32,4 +32,4 @@ async function init() {
   }
 }
 
-init();
+filterDesserts();
